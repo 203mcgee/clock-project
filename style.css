@@ -1,0 +1,17 @@
+/* Default Light Styles */
+body {
+  background-color: white;
+  color: #333;
+  transition: background-color 0.3s ease; /* Makes the switch smooth */
+}
+
+/* Dark Mode Styles */
+body .dark-theme {
+  background-color: #1a1a1a;
+  color: #f4f4f4;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
