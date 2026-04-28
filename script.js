@@ -1,6 +1,7 @@
 // setInterval(function, ms)
-// 1. The Global State
+// 1. The Global State and toggle for dark mode
 var is24HourFormat = true;
+const toggleBtn = document.querySelector('#theme-toggle');
 
 // 2. The Clock Object (The "Methods")
 var clockApp = {
@@ -10,7 +11,7 @@ var clockApp = {
         // Otherwise, just return the num
         if(num < 10)
         {
-            return 0;
+            return 0 + num;
         }
         return num;
     },
@@ -41,7 +42,27 @@ var clockApp = {
     }
     ,
     tweleveHourDisplay: function() {
-        
+        var now = new Date();
+        var h = now.getHours();
+        var m = now.getMinutes();
+        var s = now.getSeconds();
+
+        // TODO: Use the formatNumber method to clean up minutes and seconds
+        // Example: m = this.formatNumber(m);
+
+        m = this.formatNumber(m);
+        s = this.formatNumber(s);
+
+        if(h > 12)
+        {
+            let h12 = h % 2;
+            if(h12 === 0)
+            {
+                h = h12;
+            }
+        }
+
+        return h + ":" + m + ":" + s;
     }
 };
 
@@ -58,7 +79,6 @@ function handleToggle() {
 
 clockApp.updateDisplay(setInterval(1000))
 
-const toggleBtn = document.querySelector('#theme-toggle');
 
 // 2. Add the Event Listener
 toggleBtn.addEventListener('click', () => {
@@ -74,3 +94,14 @@ toggleBtn.addEventListener('click', () => {
     toggleBtn.textContent = "Switch to Dark Mode";
   }
 });
+
+
+const twelveHour = document.querySelector('#clock-button');
+
+twelveHour.addEventListener('click', function(){
+    
+    if(document.body.classList.toggle('clock-button'))
+    {
+        
+    }
+})
