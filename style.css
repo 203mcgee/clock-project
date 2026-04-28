@@ -5,7 +5,7 @@
 }
 
 /* Default Light Styles */
-body {
+body , .dark-theme{
   background-color: white;
   color: #333;
   transition: background-color 0.3s ease; /* Makes the switch smooth */
@@ -20,4 +20,8 @@ body {
 button {
   padding: 10px 20px;
   cursor: pointer;
+}
+
+.container{
+    display: ;
 }
