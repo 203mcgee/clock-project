@@ -11,7 +11,7 @@ var clockApp = {
         // Otherwise, just return the num
         if(num < 10)
         {
-            return 0 + num;
+            return "0" + num;
         }
         return num;
     },
@@ -77,7 +77,7 @@ function handleToggle() {
 // TODO: Use setInterval to call clockApp.updateDisplay every 1000ms
 // setInterval(function, ms)
 
-clockApp.updateDisplay(setInterval(1000))
+clockApp.updateDisplay(setInterval(handleToggle(),1000))
 
 
 // 2. Add the Event Listener
@@ -97,11 +97,20 @@ toggleBtn.addEventListener('click', () => {
 
 
 const twelveHour = document.querySelector('#clock-button');
+const display = document.getElementById("clock-display");
 
 twelveHour.addEventListener('click', function(){
     
     if(document.body.classList.toggle('clock-button'))
     {
-        
+        is24HourFormat = false;
+        // const newTime = document.createElement("h2");
+        // newTime.innerHTML = clockApp.tweleveHourDisplay();
+        display.innerHTML = clockApp.tweleveHourDisplay();
+
+        twelveHour.textContent = "Click to 24 Hour Time";
+    }
+    else{
+        twelveHour.textContent = "Click to 12 Hour Time";
     }
 })
