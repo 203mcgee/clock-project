@@ -1,11 +1,12 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Default Light Styles */
-body , .dark-theme{
+body,
+.dark-theme {
   background-color: white;
   color: #333;
   transition: background-color 0.3s ease; /* Makes the switch smooth */
@@ -17,17 +18,36 @@ body , .dark-theme{
   color: #f4f4f4;
 }
 
+
+
+.container {
+  margin: auto;
+  text-align: center;
+  border-radius: 50px;
+  height: 300px;
+  width: 300px;
+  background-color: #568259;
+}
+
+p {
+  margin: auto;
+  text-align: center;
+  font-size: 3rem ;
+  padding-top: 50px;
+}
+
+button,
+.dark-theme {
+  border-radius: 50px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
 button {
-  padding: 10px 20px;
+    padding: 10px 20px;
   cursor: pointer;
-}
-
-.container{
-    margin: auto;
-    text-align: center;
-}
-
-button{
-    border-radius: 50px;
-    
+  border-radius: 50px;
+  /* width: 1rem; */
+  background-color: #7d6167;
+  color: black;
 }

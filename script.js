@@ -21,22 +21,28 @@ var clockApp = {
         var h = now.getHours();
         var m = now.getMinutes();
         var s = now.getSeconds();
+        let amOrPm = h >= 12 ? "pm" : "am";
+
 
         // TODO: Use the formatNumber method to clean up minutes and seconds
         // Example: m = this.formatNumber(m);
 
         m = this.formatNumber(m);
         s = this.formatNumber(s);
+        
+        
 
-        if (!is24HourFormat) {
+
+        if (is24HourFormat === false) {
             // credit to: https://stackoverflow.com/questions/10556879/changing-the-1-24-hour-to-1-12-hour-for-the-gethours-method
             h = now.getHours() % 12 || 12;
-            return h + ":" + m + ":" + s;
+            return h + ":" + m + ":" + s + " "+ amOrPm;
         }
 
 
 
-        return h + ":" + m + ":" + s;
+
+        return h + ":" + m + ":" + s+" "+ amOrPm;
     },
 
     updateDisplay: function () {
@@ -52,14 +58,14 @@ var clockApp = {
 // 3. The Standalone Functions
 function handleToggle() {
     // TODO: Flip the is24HourFormat variable (true to false, or false to true)
-    is24HourFormat = !is24HourFormat;
+    is24HourFormat = false;
 }
 
 // 4. Starting the Clock
 // TODO: Use setInterval to call clockApp.updateDisplay every 1000ms
 // setInterval(function, ms)
 
-setInterval(() => {
+setInterval(function ()  {
     clockApp.updateDisplay();
 }, 1000);
 
@@ -73,6 +79,7 @@ twelveHour.addEventListener("click", function () {
     if (document.body.classList.contains("clock-button")) {
         is24HourFormat = false;
         clockApp.updateDisplay();
+        console.log()
         twelveHour.textContent = "Click to 24 Hour Time";
     } else {
         is24HourFormat = true;
