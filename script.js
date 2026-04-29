@@ -16,6 +16,15 @@ var clockApp = {
         // https://www.w3schools.com/jsref/jsref_gethours.asp
     },
 
+    getDate: function(){
+        let date = new Date();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let year = date.getFullYear();
+        
+        return day + "," + month + "," + year;
+    },
+
     getTimeString: function () {
         var now = new Date();
         var h = now.getHours();
@@ -36,13 +45,13 @@ var clockApp = {
         if (is24HourFormat === false) {
             // credit to: https://stackoverflow.com/questions/10556879/changing-the-1-24-hour-to-1-12-hour-for-the-gethours-method
             h = now.getHours() % 12 || 12;
-            return h + ":" + m + ":" + s + " "+ amOrPm;
+            return h + ":" + m + ":" + s + "  "+ amOrPm;
         }
 
 
 
 
-        return h + ":" + m + ":" + s+" "+ amOrPm;
+        return h + ":" + m + ":" + s+"  "+ amOrPm;
     },
 
     updateDisplay: function () {
@@ -50,8 +59,10 @@ var clockApp = {
         // to the result of this.getTimeString()
 
         const clock = document.getElementById("clock-display");
+        const date = document.getElementById("date-display");
 
         clock.innerHTML = this.getTimeString();
+        date.innerHTML = this.getDate();
     },
 };
 
@@ -92,8 +103,8 @@ toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 
     if (document.body.classList.contains("dark-theme")) {
-        toggleBtn.textContent = "Switch to Light Mode";
+        // toggleBtn.textContent = "Switch to Light Mode";
     } else {
-        toggleBtn.textContent = "Switch to Dark Mode";
+        // toggleBtn.textContent = "Switch to Dark Mode";
     }
 });

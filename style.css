@@ -5,9 +5,18 @@
 }
 
 /* Default Light Styles */
+
+body {
+  background-color: #568259;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body,
 .dark-theme {
-  background-color: white;
+  /* background-color: white; */
   color: #333;
   transition: background-color 0.3s ease; /* Makes the switch smooth */
 }
@@ -18,21 +27,19 @@ body,
   color: #f4f4f4;
 }
 
-
-
 .container {
   margin: auto;
   text-align: center;
   border-radius: 50px;
   height: 300px;
   width: 300px;
-  background-color: #568259;
+  
 }
 
 p {
   margin: auto;
   text-align: center;
-  font-size: 3rem ;
+  font-size: 2rem;
   padding-top: 50px;
 }
 
@@ -44,10 +51,37 @@ button,
 }
 
 button {
-    padding: 10px 20px;
+  padding: 10px 20px;
   cursor: pointer;
   border-radius: 50px;
   /* width: 1rem; */
   background-color: #7d6167;
   color: black;
+}
+
+/* https://www.youtube.com/watch?v=_gKEUYarehE */
+#theme-toggle{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+#theme-toggle svg{
+    fill: white;
+}
+#theme-toggle svg:last-child{
+   display: none;
+}
+.dark-theme #theme-toggle svg:first-child{
+    display: none;
+}
+.dark-theme #theme-toggle svg:last-child{
+    display: block;
+    fill: white;
 }
