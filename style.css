@@ -23,5 +23,11 @@ button {
 }
 
 .container{
-    display: ;
+    margin: auto;
+    text-align: center;
+}
+
+button{
+    border-radius: 50px;
+    
 }
