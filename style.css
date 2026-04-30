@@ -33,6 +33,8 @@ body,
   border-radius: 50px;
   height: 300px;
   width: 300px;
+  background-color: #568259;
+  border: 25px solid black;
   
 }
 
@@ -41,6 +43,7 @@ p {
   text-align: center;
   font-size: 2rem;
   padding-top: 50px;
+  color: black;
 }
 
 button,
@@ -84,4 +87,10 @@ button {
 .dark-theme #theme-toggle svg:last-child{
     display: block;
     fill: white;
+}
+
+@media (max-width <= 375){
+    #theme-toggle{
+        right: 500px;
+    }
 }
