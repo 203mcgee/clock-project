@@ -28,14 +28,20 @@ body,
 }
 
 .container {
-  margin: auto;
-  text-align: center;
-  border-radius: 50px;
-  height: 300px;
-  width: 300px;
-  background-color: #568259;
-  border: 25px solid black;
-  
+    margin: auto;
+    text-align: center;
+    padding: 0;
+    height: 300px;
+    width: 300px;
+    border-radius: 50px;
+    background-color: #568259;
+    border: 25px solid black;
+     
+}
+.card{
+    /* background-color: black; */
+    border-radius: 50px;
+    
 }
 
 p {
@@ -63,34 +69,59 @@ button {
 }
 
 /* https://www.youtube.com/watch?v=_gKEUYarehE */
-#theme-toggle{
-    height: 50px;
-    width: 50px;
-    padding: 0;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 20px;
+#theme-toggle {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center; 
+   align-items: center;
+  position: fixed;
+  top: 20px;
+  /* right: 20px; */
+  left: 10px;
 }
-#theme-toggle svg{
-    fill: white;
+#theme-toggle svg {
+  fill: white;
 }
-#theme-toggle svg:last-child{
-   display: none;
+#theme-toggle svg:last-child {
+  display: none;
 }
-.dark-theme #theme-toggle svg:first-child{
-    display: none;
+.dark-theme #theme-toggle svg:first-child {
+  display: none;
 }
-.dark-theme #theme-toggle svg:last-child{
-    display: block;
-    fill: white;
+.dark-theme #theme-toggle svg:last-child {
+  display: block;
+  fill: white;
 }
 
-@media (max-width <= 375){
-    #theme-toggle{
-        right: 500px;
-    }
+@media (max-width : 375) {
+  /* .container {
+    margin: auto;
+    text-align: center;
+    border-radius: 50px;
+    height: 300px;
+    width: 300px;
+    background-color: #568259;
+    border: 25px solid black;
+  } */
+  .container {
+  margin: auto;
+  text-align: center;
+  
+  border-radius: 50px;
+  height: 300px;
+  width: 300px;
+  
+  background-color: #568259;
+  border: 25px solid black;
+}
+  p {
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 50px;
+    color: black;
+  }
 }

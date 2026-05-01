@@ -22,7 +22,7 @@ var clockApp = {
         let day = date.getDate();
         let year = date.getFullYear();
         
-        return day + "/" + month + "/" + year;
+        return month + "/" + day + "/" + year;
     },
 
     getTimeString: function () {
